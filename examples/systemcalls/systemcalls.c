@@ -58,7 +58,9 @@ bool do_exec(int count, ...)
  *   as second argument to the execv() command.
  *
 */
-
+    fork();
+    execv(command[0], command);
+    wait();
     va_end(args);
 
     return true;
